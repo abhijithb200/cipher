@@ -39,9 +39,9 @@ function CatRate({ rate, cat }) {
 
 function Rating() {
     return (
-        <div className='bg-cyan-700 '>
+        <div className=' '>
             <div className="flex justify-evenly p-10 
-        text-white">
+        bg-white mx-28">
                 {/* Left */}
                 <div className="flex items-center space-x-10 pr-20 
             border-r-2">

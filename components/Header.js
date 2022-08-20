@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { UserIcon } from '@heroicons/react/outline'
+import { ChatIcon, UserIcon } from '@heroicons/react/outline'
 
 function Header() {
     const [profiletoggle, setProfileToggle] = useState(false)
@@ -17,6 +17,15 @@ function Header() {
                 <p className='hover:border-b-4 border-yellow-500 py-7 px-3'>About</p>
                 <p className='hover:border-b-4 border-green-500 py-7 px-3'>Courses</p>
                 <p className='hover:border-b-4 border-orange-500 py-7 px-3'>Colleges</p>
+            </div>
+            <div
+                className={`flex flex-col  py-3 cursor-pointer relative  `}>
+                <ChatIcon className='h-6' />
+                <p className=''>Messaging</p>
+                <div className='h-3 w-3
+                absolute right-6 bg-green-300 rounded-full'>
+
+                </div>
             </div>
             <div className='flex items-center space-x-3 pr-8'>
                 <div onMouseEnter={() => setProfileToggle(true)}

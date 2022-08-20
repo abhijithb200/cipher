@@ -1,7 +1,7 @@
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/outline'
 import React from 'react'
 
-function College() {
+function College({ college }) {
     return (
         <>
             <div class="college_item">
@@ -21,10 +21,13 @@ function College() {
                             </div>
                             <p>23 faculty reviews</p>
                         </div>
-                        <div className='flex items-center cursor-pointer'>
-                            <p>Load more</p>
-                            <ChevronRightIcon className='h-12  ml-0 transition duration-150 hover:scale-110' />
-                        </div>
+                        {
+                            !college && <div className='flex items-center cursor-pointer'>
+                                <p>Load more</p>
+                                <ChevronRightIcon className='h-12  ml-0 transition duration-150 hover:scale-110' />
+                            </div>
+                        }
+
 
                     </div>
                 </div>
