@@ -13,7 +13,28 @@ const courses = [
     {
         name: 'Commerce',
         programs: ['BCom', 'MCom']
+    },
+    {
+        name: 'Computer',
+        programs: ['BCA', 'MCA']
+    },
+    {
+        name: 'Science',
+        programs: ['Bsc', 'Msc']
+    },
+    {
+        name: 'Architecture',
+        programs: ['B.Arch', 'M.Arch', 'Architecture - Diploma']
+    },
+    {
+        name: 'Arts & Humanities',
+        programs: ['BA', 'MA', 'BFA', 'MFA']
+    },
+    {
+        name: 'Pharmacy',
+        programs: ['B.Pharm', 'M.Pharm']
     }
+
 ]
 
 function Explore() {

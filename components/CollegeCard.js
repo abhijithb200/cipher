@@ -4,7 +4,7 @@ import React from 'react'
 function CollegeCard() {
     return (
         <div className='h-48 border w-[32%] max-w-[32%] min-w-[32%]  rounded-xl shadow-lg hover:scale-105
-        transition duration-300 cursor-pointer'>
+        transition duration-300 cursor-pointer  m-3'>
             <div className='h-[73%] border-b rounded-t-xl'
                 style={{ background: `url(https://images.collegedunia.com/public/college_data/images/appImage/1620192479desk.png?)`, backgroundSize: 'cover' }}>
                 <div className=' bottom-0 text-white pl-2
@@ -15,7 +15,11 @@ function CollegeCard() {
                 </div>
 
             </div>
-            <div>
+            <div className='flex justify-between items-center'>
+                <div className='text-xs pl-2 text-gray-500'>
+                    <p>Approved by: NAAC</p>
+                    <p>Type: Private</p>
+                </div>
 
                 <div className='flex flex-col pr-2 '>
                     <div className="flex 

@@ -19,9 +19,9 @@ function ExploreCard({ course, program, selected, coursefun, programfun }) {
                     :
 
                     <div className={`border cursor-pointer mr-3 mb-3 
-            hover:border-sky-500 border-gray-300  w-44  group ${selected && 'border-sky-500'}`}
+            hover:border-sky-500 border-gray-300  w-44   group ${selected && 'border-sky-500'}`}
                         onClick={() => coursefun(course)}>
-                        <p className={`text-center  group-hover:text-sky-500  p-9
+                        <p className={`text-center  group-hover:text-sky-500  p-5
                 text-gray-500  ${selected && 'text-sky-500'}`}>{course}</p>
 
                     </div>
