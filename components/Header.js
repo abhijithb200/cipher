@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ChatIcon, UserIcon } from '@heroicons/react/outline'
 
 function Header() {
     const [profiletoggle, setProfileToggle] = useState(false)
 
+    useEffect(() => {
+        // const user = prompt('Your name')
+        localStorage.setItem('username', 'Abhijith B');
+    }, [])
 
     return (
         <div className='flex bg-white mb-2 px-2 items-center justify-between shadow-md h-20 '>
