@@ -24,3 +24,45 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
+
+.compare>table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.compare_row>td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-weight: 400;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.compare_row>:nth-child(even) {
+    background-color: #d8d8d8;
+}
+
+.compare_row_special>td {
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: left;
+
+}
+
+.course_row_table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.course_row>td {
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px;
+}
+
+.course_row_special {
+    font-weight: 500;
+}

@@ -62,10 +62,41 @@ function Courses() {
                     }
                 </div>
 
+
             </div>
             <div className='bg-white mt-4 shadow-lg rounded-lg 
          overflow-hidden mx-28 p-5'>
+                <p className='font-medium text-xl '> Bsc Physics</p>
+            </div>
+            <div className='bg-white mt-4 shadow-lg rounded-lg 
+         overflow-hidden mx-28 p-5'>
+                <p className='font-medium text-base '> Eligibility criteria</p>
+                <p><span className='px-3'>&bull;</span>Bachelor’s degree is a must with at least 50% grades for applying participants.</p>
+            </div>
+            <div className='bg-white mt-4 shadow-lg rounded-lg 
+         overflow-hidden mx-28 p-5'>
+                <p className='font-medium text-base pb-5'> Other Details</p>
+                <table className='course_row_table '>
+                    <tbody >
+                        <tr className=' course_row course_row_special border table-cell'>
 
+                            <td className=' block'>Fee</td>
+                            <td className=' block'>Seats</td>
+
+
+                        </tr>
+
+                        <tr className='course_row border table-cell'>
+
+                            <td className=' block text-green-500 font-bold'>2 Lakh</td>
+                            <td className=' block'>30</td>
+
+
+
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
         </div>
     )

@@ -43,6 +43,8 @@ const courses = [
 
 ]
 
+
+
 function Explore() {
     const [selectedCourse, setSelectedCourse] = useState('')
     const [selectedProgram, setSelectedProgram] = useState('')
@@ -84,6 +86,10 @@ function Explore() {
         setWordEntered("");
         setSelectedSpecialization("")
     };
+
+    const getdata = (specialization) => {
+        console.log(selectedCourse, selectedProgram, specialization)
+    }
 
     return (
         <div className="my-8 pb-10  bg-white">
@@ -161,6 +167,7 @@ function Explore() {
                                 cursor-pointer hover:bg-gray-200 border-x border-b'
                                                 onClick={(e) => {
                                                     setSelectedSpecialization(value)
+                                                    getdata(value)
                                                 }}>{value}</p>
 
                                         );
