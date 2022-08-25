@@ -8,35 +8,53 @@ import firebase from 'firebase'
 
 function FacultyCard({ toggle, name }) {
     return (
-        <div className='shadow-lg w-full m-3 mt-0 min-w-fit max-w-fit max-h-72 h-72
-         p-10 text-center group ' >
-            <img className='h-28 border-4  group-hover:border-cyan-500
+        <div className='shadow-lg  m-3 mt-0 w-80 max-w-80
+ h-auto p-10 text-center group  flex-col' >
+            <img className='h-28 m-auto border-4  group-hover:border-cyan-500
              rounded-full' src="https://i.pinimg.com/originals/4a/3b/1a/4a3b1abae4f1f97688d1250222552bef.png" />
             <p className='pt-2 text-lg font-medium' >{name}</p>
             <p className='text-sm text-gray-500'>Professor DUK</p>
-            <button className='mt-4
-            bg-cyan-500 text-white w-full p-2 hidden
-            group-hover:inline-flex rounded-full  
-            ' onClick={() => toggle({ status: true, name: name })}>Send Message</button>
+            <p className='text-sm text-gray-500
+            max-w-'>Qualification : Phd.Psychology MSc.Physics,Msc Botany</p>
+            <p className='text-sm text-gray-500'>Years of expirience : 3</p>
+            <div className='flex items-center mt-4  justify-center
+             space-x-2 '>
+                <p className='
+                bg-cyan-500 text-white p-2 w-fit 
+                group-hover: rounded-full cursor-pointer
+            ' onClick={() => toggle({ status: true, name: name })} >Send Message</p>
+
+                <img className='h-7' src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG16.png" />
+            </div>
         </div>
     )
 }
 
-function AlumniCard() {
+function AlumniCard({ desig }) {
     return (
         <div className='shadow-lg w-full m-3 mt-0 min-w-fit max-w-fit
-         max-h-80 h-80
-         p-10 text-center group '>
-            <img className='h-28 border-4 group-hover:border-cyan-500 
-             rounded-full' src="https://i.pinimg.com/originals/4a/3b/1a/4a3b1abae4f1f97688d1250222552bef.png" />
+          h-auto
+         p-10 text-center group  flex-col '>
+            <img className='h-28 m-auto border-4 group-hover:border-cyan-500 
+             rounded-full  ' src="https://i.pinimg.com/originals/4a/3b/1a/4a3b1abae4f1f97688d1250222552bef.png" />
             <p className='pt-2 text-lg font-medium' >Thomas Shelby</p>
             <hr />
+            <p className='bg-green-400 w-fit mx-auto rounded-full
+            px-5 my-1 text-center text-white'>Fresher</p>
             <p className='text-sm text-gray-500'>Pass out year : 2020</p>
-            <p className='text-sm text-gray-500'>Course : MSc</p>
-            <p className='mt-4
-                bg-cyan-500 text-white p-2 w-fit hidden
-                group-hover:inline-flex rounded-full 
+            <p className='text-sm text-gray-500'>Course : MSc </p>
+            <p className='text-sm text-gray-500'>Register Number : 10423</p>
+
+            <div className='flex items-center mt-4 space-x-2'>
+                <p className='
+                bg-cyan-500 text-white p-2 w-fit 
+                group-hover: rounded-full 
             '>Send Message</p>
+
+                <img className='h-7' src="https://pngimg.com/uploads/linkedIn/linkedIn_PNG16.png" />
+            </div>
+
+
         </div >
     )
 }
@@ -133,8 +151,8 @@ function Faculty() {
                 <p className=" font-medium text-xl">
                     Faculty</p>
                 <div className="flex justify-between py-5">
-                    <div className="  bg-gray-100
-                         rounded-full p-2  shadow-xl z-20 " onClick={() =>
+                    <div className=" bg-gray-100
+                         rounded-full p-2  shadow-xl" onClick={() =>
                             scrollLeft(scrollItem.current, -700, 1000)
                         }>
                         <ChevronLeftIcon className="h-6" />
@@ -164,9 +182,9 @@ function Faculty() {
                 <p className=" font-medium text-xl pb-5">
                     Alumni</p>
                 <div className="flex flex-wrap justify-center">
-                    <AlumniCard />
-                    <AlumniCard />
-                    <AlumniCard />
+                    <AlumniCard desig='Fresher' />
+                    <AlumniCard desig='Quintennials' />
+                    <AlumniCard desig="Decadents" />
                     <AlumniCard />
                     <AlumniCard />
                     <AlumniCard />

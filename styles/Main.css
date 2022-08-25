@@ -17,3 +17,10 @@
     height: 350px;
     object-fit: cover;
 }
+
+.college_about {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

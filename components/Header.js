@@ -27,7 +27,7 @@ function Header() {
                 <ChatIcon className='h-6' />
                 <p className=''>Messaging</p>
                 <div className='h-3 w-3
-                absolute right-6 bg-green-300 rounded-full'>
+                absolute right-6 bg-green-300 rounded-full animate-pulse'>
 
                 </div>
             </div>
