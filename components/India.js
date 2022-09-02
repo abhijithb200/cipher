@@ -1,8 +1,10 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/outline";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import ReactDatamaps from "react-india-states-map";
 import CollegeCard from "./CollegeCard";
+import Colleges from '../colleges.json'
+
 
 const STATES = {
     Maharashtra: {
@@ -42,7 +44,7 @@ Math.easeInOutQuad = function (t, b, c, d) {
     return -c / 2 * (t * (t - 2) - 1) + b;
 };
 
-const India = () => {
+const India = ({ selectedItems }) => {
     const [activeState, setactiveState] = useState({
         data: STATES.Maharashtra,
         name: "India",
@@ -51,15 +53,28 @@ const India = () => {
     const [stateLists, setStateLists] = useState(STATES);
     const [hoverstate, setHoverstate] = useState(null);
 
+    const [keys, setKeys] = useState(Object.keys(Colleges));
+    const [list, setList] = useState([]);
+
     const scrollItem = useRef(null)
 
+    useEffect(() => {
+        const list = []
+        keys.forEach(key => {
+            list.push(Colleges[key])
+        })
+        setList(list)
+    }, [])
+
     const stateOnClick = (data, name) => {
-        setactiveState({ data, name });
+        setactiveState({
+            data: 'data',
+            name: name
+        });
 
         if (name == activeState.name) {
             clear()
         }
-        // console.log(data, name)
     };
 
     const clear = () => {
@@ -73,8 +88,9 @@ const India = () => {
 
     return (
         <div>
-            <p className="text-center  text-3xl pt-8 pb-4">Medical Colleges in {activeState.name != 'India' ?
-                activeState.name : hoverstate ? hoverstate : activeState.name}</p>
+            <p className="text-center  text-3xl pt-8 pb-4">{selectedItems.course} Colleges in {activeState.name != 'India' ?
+                activeState.name : hoverstate ? hoverstate : activeState.name}
+                {selectedItems.course && ` that provides ${selectedItems.program}  ${selectedItems.specialization}`}</p>
             <div className="relative">
 
                 <div className="absolute w-[45%] left-0 ">
@@ -133,29 +149,29 @@ const India = () => {
                     <div className="flex justify-between py-5">
                         <div className="  bg-gray-100
                          rounded-full p-2  shadow-xl z-20 " onClick={() =>
-                                scrollLeft(scrollItem.current, -700, 1000)
+                                scrollLeft(scrollItem.current, -750, 1000)
                             }>
                             <ChevronLeftIcon className="h-6" />
                         </div>
                         <div className=" bg-gray-100
                          rounded-full p-2  shadow-xl" onClick={() =>
-                                scrollLeft(scrollItem.current, 700, 1000)
+                                scrollLeft(scrollItem.current, 750, 1000)
                             }>
                             <ChevronRightIcon className="h-6" />
                         </div>
                     </div>
                     <div className="flex  p-3 space-x-2  overflow-x-scroll scrollbar-hide" ref={scrollItem}>
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
-                        <CollegeCard />
+                        {
+                            selectedItems['course'] && activeState.name == 'Karnataka' && <> {
+                                list.slice(0, 6).map(li => (
+                                    <CollegeCard name={li['Name of the institute']}
+                                        place={li['State']} rating={li['rateTag']} image={li['Image']}
+                                        nirf={li['NIRF ranking']} />
+                                ))
+                            }</>
+
+
+                        }
 
 
                     </div>

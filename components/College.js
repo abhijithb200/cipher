@@ -1,25 +1,25 @@
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/outline'
 import React from 'react'
 
-function College({ college }) {
+function College({ currentCollege, college }) {
     return (
         <>
             <div class="college_item">
 
-                <img class="college_image" src="https://images.collegedunia.com/public/asset/img/homepage/banner/Shri1642233244.webp?mode=stretch" />
+                <img className="college_image object-center " src={currentCollege ? currentCollege['Cover'] : `https://images.collegedunia.com/public/asset/img/homepage/banner/Shri1642233244.webp?mode=stretch`} />
                 <div class="college_desc items-center flex justify-between p-5 text-white">
                     <div>
-                        <p class="text-2xl font-semibold">Kerala University of Sciences</p>
-                        <p className='text-lg'>Trivandrum</p>
+                        <p class="text-2xl font-semibold">{currentCollege["Name of the institute"]}</p>
+                        <p className='text-lg'>{currentCollege['State']}</p>
                     </div>
                     <div className='flex items-center'>
                         <div className='mr-10'>
                             <div className="flex items-center justify-end ">
                                 <StarIcon className='h-6  text-yellow-400' />
-                                <p className="font-semibold ">4.5/5</p>
+                                <p className="font-semibold ">{currentCollege["rateTag"]} </p>
 
                             </div>
-                            <p>23 faculty reviews</p>
+                            <p>{currentCollege["reviewTot"]}</p>
                         </div>
                         {
                             !college && <div className='flex items-center cursor-pointer'>

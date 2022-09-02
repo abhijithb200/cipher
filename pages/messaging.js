@@ -18,7 +18,7 @@ function LeftChat({ name, id, currentContact, currentvar }) {
              rounded-full' src="https://i.pinimg.com/originals/4a/3b/1a/4a3b1abae4f1f97688d1250222552bef.png" />
             <div>
                 <p className='pt-2 text-sm font-medium' >{name}</p>
-                <p className='text-xs ' >How are you my boy?</p>
+                <p className='text-xs ' >Hi</p>
             </div>
 
         </div>

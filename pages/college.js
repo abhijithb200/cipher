@@ -5,9 +5,17 @@ import Faculty from '../components/Faculty'
 import Header from '../components/Header'
 import Overview from '../components/Overview'
 import Rating from '../components/Rating'
+import Colleges from '../colleges.json'
+import { useRouter } from 'next/router'
 
 
 function college() {
+    const router = useRouter()
+    const { id } = router.query
+    const [currentCollege, setCurrentCollege] = useState(Colleges[id])
+
+
+
     const [now, setNow] = useState('Overview')
     const scroll = useRef()
     const ref = useRef()
@@ -32,7 +40,7 @@ function college() {
     return (
         <div className="bg-gray-100 ">
             <Header />
-            <College college />
+            <College college currentCollege={currentCollege} />
 
             <div ref={scroll} className="flex bg-white p-3  w-full shadow-md justify-evenly">
                 <p onClick={(e) => setNow(e.target.innerHTML)} className="">Overview</p>
@@ -42,20 +50,20 @@ function college() {
             </div>
 
             <p ref={ref} className='mb-16 -mt-10'></p>
-
-            {
-                now == 'Reviews' && <Rating />
-            }
-            {
-                now == 'Faculty/Alumni' && <Faculty />
-            }
-            {
-                now == 'Courses' && <Courses />
-            }
-            {
-                now == 'Overview' && <Overview />
-            }
-            <p>sd</p>
+            <div className="mb-5">
+                {
+                    now == 'Reviews' && <Rating />
+                }
+                {
+                    now == 'Faculty/Alumni' && <Faculty />
+                }
+                {
+                    now == 'Courses' && <Courses />
+                }
+                {
+                    now == 'Overview' && <Overview currentCollege={currentCollege} />
+                }
+            </div>
         </div>
     )
 }

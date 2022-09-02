@@ -1,17 +1,22 @@
 import { StarIcon } from '@heroicons/react/outline'
 import React from 'react'
+import { useRouter } from 'next/router'
 
-function CollegeCard() {
+function CollegeCard({ name, place, rating, image, nirf }) {
+    const router = useRouter()
     return (
-        <div className='h-48 border w-[32%] max-w-[32%] min-w-[32%]  rounded-xl shadow-lg hover:scale-105
+        <div onClick={(e) => {
+            e.preventDefault()
+            router.push(`college?id=${nirf}`)
+        }} className='h-48 border w-[32%] max-w-[32%] min-w-[32%]  rounded-xl shadow-lg hover:scale-105
         transition duration-300 cursor-pointer  m-3'>
             <div className='h-[73%] border-b rounded-t-xl'
-                style={{ background: `url(https://images.collegedunia.com/public/college_data/images/appImage/1620192479desk.png?)`, backgroundSize: 'cover' }}>
+                style={{ background: `url(${image})`, backgroundSize: 'cover' }}>
                 <div className=' bottom-0 text-white pl-2
-                 bg-black bg-opacity-40  w-full h-full pt-20 rounded-t-xl
+                 bg-black bg-opacity-40  w-full h-full pt-14 rounded-t-xl
                 '>
-                    <p className='font-bold'>Digital University of Kerala</p>
-                    <p className='text-sm'>Trivandrum</p>
+                    <p className='font-bold text-sm'>{name}</p>
+                    <p className='text-xs    '>{place}</p>
                 </div>
 
             </div>
@@ -25,7 +30,7 @@ function CollegeCard() {
                     <div className="flex 
                      items-center justify-end ">
                         <StarIcon className='h-6  text-yellow-400' />
-                        <p className="font-semibold text-base">4.5/5</p>
+                        <p className="font-semibold text-base">{rating}</p>
 
                     </div>
                     <p className="text-right font-thin text-xs">23 faculty reviews</p>
